@@ -10,12 +10,14 @@ public class pierwszyController {
         return "Nasz pierwszy projekt i już działający serwer :-)";
     }
 
-    @GetMapping(value = "/{tekst1}/{liczba1}/{tekst2}/{liczba2}")
-    public String PrzykladZPath(@PathVariable String tekst1, @PathVariable Long liczba1,
-                                @PathVariable String tekst2, @PathVariable Long liczba2
-    ) throws Exception {
-        return "Z adresu pozyskałem następujące dane: tekst1="+tekst1+", liczba1:"+liczba1+", " +
-                "tekst2="+tekst2+", liczba2 to:"+liczba2
-                ;
+    @GetMapping(value = "/{tekst1}/{liczba1}/{liczba2}")
+    public String PrzykladZPath(@PathVariable String tekst1, @PathVariable Long liczba1, @PathVariable Long liczba2
+    ) {
+        return switch (tekst1) {
+            case "dodawanie" -> "Wynik: " + (liczba1 + liczba2);
+            case "odejmowanie" -> "Wynik: " + (liczba1 - liczba2);
+            case "iloczyn" -> "Wynik: " + (liczba1 * liczba2);
+            default -> "Wpisz [dodawanie, odejmowanie lub iloczyn]/liczba1/liczba2";
+        };
     }
 }
