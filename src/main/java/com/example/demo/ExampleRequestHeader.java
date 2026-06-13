@@ -1,8 +1,11 @@
 package com.example.demo;
 
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -35,3 +38,38 @@ public class ExampleRequestHeader {
                 "adres hosta: " + host;
     }
 }
+
+@Controller
+class HelloController {
+    @RequestMapping("/szablon")
+    public String hello() {
+        return "StronaWidok";
+    }
+}
+
+@Controller
+class KolejnyController2 {
+    @RequestMapping("/parametr")
+    public String hello(Model model) {
+        model.addAttribute("danzeZKontrolera", "Tekst jest parametrem (atrybutem), nie ma go w widoku");
+        return "PrzekazywanieParametrow";
+    }
+}
+
+@Controller
+class KolejnyController3 {
+    @RequestMapping("/obiekt")
+    public Object hello3(Model model) {
+        Osoba osoba1 = new Osoba(1, "Jan", "Kowalski", "600-123-456", "przykladowy@mail.com");
+        model.addAttribute("osoba1", osoba1);
+        Osoba osoba2 = new Osoba(2, "Anna", "Nowak", "600-987-654", "anna@mail.com");
+
+        model.addAttribute("osoba2", osoba2);
+        return "obiektOsoba";
+    }
+}
+
+
+
+
+

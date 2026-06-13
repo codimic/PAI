@@ -1,3 +1,5 @@
+package com.example.demo;
+
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.stereotype.Component;
