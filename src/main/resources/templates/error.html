@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+<br>
+<div th:if="${osobaFormularz.imie != null and osobaFormularz.imie.length() < 3}">
+    <p th:text="'Liczba liter w imieniu ' + ${osobaFormularz.imie.length()} + ' Czy to nie za mało ?'"></p>
+    <br>
+    <p th:text="'Wprowadzone przez Ciebie dane to:'"></p>
+    <p th:text="'Imie: ' + ${osobaFormularz.imie}"></p>
+    <p th:text="'Nazwisko: ' + ${osobaFormularz.nazwisko}"></p>
+    <p th:text="'Telefon: ' + ${osobaFormularz.telefon}"></p>
+    <p th:text="'Email: ' + ${osobaFormularz.mail}"></p>
+</div>
+
+<div th:if="${osobaFormularz.nazwisko != null and osobaFormularz.nazwisko.length() < 1}">
+    <p th:text="'Liczba liter w nazwisku ' + ${osobaFormularz.nazwisko.length()} + ' Czy to nie za mało ?'"></p>
+    <br>
+    <p th:text="'Wprowadzone przez Ciebie dane to:'"></p>
+    <p th:text="'Imie: ' + ${osobaFormularz.imie}"></p>
+    <p th:text="'Nazwisko: ' + ${osobaFormularz.nazwisko}"></p>
+    <p th:text="'Telefon: ' + ${osobaFormularz.telefon}"></p>
+    <p th:text="'Email: ' + ${osobaFormularz.mail}"></p>
+</div>
+
+<div th:if="${osobaFormularz.mail != null and osobaFormularz.mail.length() < 3}">
+    <p th:text="'Ilość liter w mailu ' + ${osobaFormularz.mail.length()} + ' Czy to nie za mało ?'"></p>
+    <br>
+    <p th:text="'Wprowadzone przez Ciebie dane to:'"></p>
+    <p th:text="'Imie: ' + ${osobaFormularz.imie}"></p>
+    <p th:text="'Nazwisko: ' + ${osobaFormularz.nazwisko}"></p>
+    <p th:text="'Telefon: ' + ${osobaFormularz.telefon}"></p>
+    <p th:text="'Email: ' + ${osobaFormularz.mail}"></p>
+</div>
+
+<!--<p th:text="'Wprowadzone przez Ciebie dane to:'"></p>-->
+<!--<p th:text="'Imie: '+${osobaFormularz.imie}'"></p>-->
+<!--<p th:text="'Nazwisko: '+${osobaFormularz.nazwisko}'"></p>-->
+<!--<p th:text="'Telefon: '+${osobaFormularz.telefon}'"></p>-->
+<!--<p th:text="'Email: '+${osobaFormularz.mail}'"></p>-->
+
+</body>
+</html>
