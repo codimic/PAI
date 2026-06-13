@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Locale;
@@ -68,6 +71,17 @@ class KolejnyController3 {
         return "obiektOsoba";
     }
 }
+
+@Controller
+class Formularz {
+    @RequestMapping("/formularz")
+    public Object hello3(Model model) {
+        Osoba osoba3 = new Osoba(2, "Henryk", "Sienkiewicz", "123-456-789", "henryk@mail.pl");
+        model.addAttribute("osoba3", osoba3);
+        return "formularz";
+    }
+}
+
 
 
 
