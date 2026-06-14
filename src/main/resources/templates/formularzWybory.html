@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <meta charset="UTF-8">
+    <title>Formularz - wybory</title>
+</head>
+<body>
+<br>
+
+<form th:action="@{/wybory}" th:object="${osobaFormularz}" method="post">
+
+    <p>
+        Imię:
+        <input type="text" th:field="*{imie}" />
+    </p>
+
+    <p>
+        Nazwisko:
+        <input type="text" th:field="*{nazwisko}" />
+    </p>
+
+    <p>
+        Wiek:
+        <input type="number" th:field="*{wiek}" min="0" />
+    </p>
+
+    <p>
+        <button type="submit">Sprawdź</button>
+    </p>
+
+</form>
+
+</body>
+</html>

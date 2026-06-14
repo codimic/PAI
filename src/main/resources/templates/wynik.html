@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="pl">
+    <meta charset="UTF-8">
+    <title>Wynik</title>
+</head>
+<body>
+<br>
+
+<p th:text="'Imię: ' + ${osobaFormularz.imie}"></p>
+<p th:text="'Nazwisko: ' + ${osobaFormularz.nazwisko}"></p>
+<p th:text="'Wiek: ' + ${osobaFormularz.wiek}"></p>
+
+<br>
+
+<p th:text="${komunikat}"></p>
+
+</body>
+</html>
